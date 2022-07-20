@@ -35,6 +35,7 @@ body {
   color: #252525;
   height: 70px;
   z-index: 12;
+	padding: 0 20px;
 }
 
 .navbar-container {
@@ -43,7 +44,7 @@ body {
 	align-items: center;
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 20px 0 20px 0;
+	padding: 20px 10px 20px 10px;
 }
 
 .menu-logo {
@@ -75,9 +76,7 @@ body {
   transition: color 0.3s ease-in-out;
 }
 
-
-
-
+/* Menu Mobile */
 @media (max-width: 739px) {
 
   .navbar {
@@ -107,7 +106,6 @@ body {
   }
 
   .navbar-container .hamburger-lines {
-    display: block;
     height: 23px;
     width: 35px;
     position: absolute;
@@ -182,7 +180,6 @@ body {
   .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
     transform: rotate(-35deg);
   }
-
 }
 
 
@@ -218,7 +215,9 @@ body {
 
 @media (max-width: 739px) {
 	.intro {
-		padding: 90px 0; 
+		background: url('../img/bg.jpeg');
+		background-size: cover;
+		padding: 90px 0;
 	}
 }
 
@@ -226,19 +225,14 @@ body {
 /* Sobre */
 
 .sobre {
-	padding: 60px;
+	padding: 60px  30px;
 }
-
 
 .sobre-container {
+	display: flex;
+	flex-wrap: wrap;
 	max-width: 960px;
 	margin: 0 auto;
-}
-
-.sobre-container::after, .sobre-container::before {
-	content: '';
-	display: table;
-	clear: both;
 }
 
 .sobre h2 {
@@ -247,16 +241,14 @@ body {
 	margin-bottom: 60px;
 }
 
-
 .sobre-item {
-	width: 460px;
-	float: left;
+	max-width: 460px;
 	margin: 0 10px;
 }
 
 .sobre-item img {
 	display: block;
-	max-width: 100%;
+	width: 100%;
 }
 
 .sobre-item h3 {
@@ -283,32 +275,12 @@ body {
 }
 
 
-@media (min-width: 740px) and (max-width: 980px) {
-	.sobre-container {
-		max-width: 720px;
-	}
-	.sobre-item {
-		width: 340px;
-	}
-}
-
-
-@media (max-width: 739px) {
-	.sobre-container {
-		max-width: 300px;
-	}
-	.sobre-item {
-		width: 300px;
-		margin: 0 auto;
-	}
-}
 
 /* Produtos */
 
 
 .produtos{
-	text-align: center;
-	background: #FAF8F1;
+	background-color: #b8afa672;
 	padding: 60px 0;
 	border-top: 3px solid #b8afa6;
 	border-bottom: 3px solid #b8afa6;
@@ -322,7 +294,8 @@ body {
 }
 
 .produtos-item {
-	width: 300px;
+	text-align: center;
+	max-width: 300px;
 	margin: 0 10px 20px 10px;
 }
 
@@ -367,8 +340,6 @@ body {
 
 /* Locais */
 
-
-
 .locais {
 	max-width: 960px;
 	margin: 0 auto;
@@ -376,28 +347,10 @@ body {
 }
 
 .locais-item {
-	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 	margin: 60px auto;
-}
-
-
-.locais-item::after, .locais-item::before {
-	display: table;
-	content: '';
-	clear: both;
-}
-
-.locais-item img {
-	width: 460px;
-	display: block;
-	float: left;
-	margin: 0 10px;
-}
-
-.locais-item > div {
-	width: 460px;
-	float: left;
-	margin: 0 10px;
 }
 
 .locais-item h2 {
@@ -427,6 +380,18 @@ body {
 	border: 3px solid #b8afa6;
 }
 
+@media (max-width: 739px) {
+
+	.locais-text {
+		padding-left: 10px;
+	}
+
+	.locais-item img{
+		padding: 0 10px;
+		width: 100%;
+	}
+}
+
 /* Assine */
 
 .assine {
@@ -435,20 +400,11 @@ body {
 }
 
 .assine-container {
+	display: flex;
+	flex-direction: column;
 	max-width: 960px;
 	margin: 0 auto;
-}
-
-.assine-container::after, .assine-container::before {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-.assine-info {
-	width: 460px;
-	margin: 0 10px;
-	float: left;
+	padding: 10px 0;
 }
 
 .assine-info h2 {
@@ -456,14 +412,9 @@ body {
 }
 
 .assine-info p {
+	margin-bottom: 10px;
 	font-size: 1.53em;
 	font-style: italic;
-}
-
-.assine form {
-	width: 460px;
-	margin: 10px 10px 0 10px;
-	float: left;
 }
 
 
@@ -471,6 +422,9 @@ body {
 	display: none;
 }
 
+.input-box {
+	display: flex;
+}
 
 .assine input {
 	width: 320px;
@@ -480,7 +434,6 @@ body {
 	font-style: italic;
 	font-family: georgia, serif;
 	padding: 10px;
-	float: left;
 }
 
 .assine button {
@@ -495,6 +448,20 @@ body {
 	cursor: pointer;
 }
 
+@media (max-width: 739px) {
+.assine-container {
+		padding: 10px;
+	}
+
+.assine-info p {
+	padding-right: 90px;
+}
+
+.input-box {
+	flex-direction: column;
+}
+}
+
 /* Footer */
 
 .footer {
@@ -503,28 +470,15 @@ body {
 }
 
 .footer-container {
+	text-align: center;
 	max-width: 960px;
 	margin: 0 auto;
 }
 
-.footer-container::after, .footer-container::before {
-	content: '';
-	display: table;
-	clear: both;
-}
-
 .footer p {
 	color: #FFF;
-	float: left;
-	margin: 0 10px;
 	font-size: 1.125em;
-	line-height: 1.4em;
-}
-
-.footer img {
-	float: right;
-	margin: 0 10px;
-	display: block;
+	padding: 10px 0;
 }
 
 
